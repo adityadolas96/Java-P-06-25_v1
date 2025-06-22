@@ -29,6 +29,11 @@ public class Main {
                 .skip(1)
                 .findFirst();
 
+        // Highest Salary
+        Optional<Double> max = employee.stream()
+                .map(Employee::getSalary).max(Double::compareTo);
+
         System.out.println(secondHighestSalary.get());
+        System.out.println(max.get());
     }
 }
